@@ -48,11 +48,18 @@ transition('normal <=> highlighted', animate(300)),
           transform: 'translateX(0)'
         })),
         transition('void => *',[
-        style({
-          opacity: 0,
+      style({
+         opacity: 0,
           transform: 'translateX(-100px)'
-        }),  
+        }),
           animate(300)
+        ]),
+        transition('* => void',[
+
+          animate(300, style({
+          transform: 'translateX(100px)'  ,
+           opacity: 0
+          }))
         ]),
         //transition(' highlighted => normal ', animate(800)),
           ]),
